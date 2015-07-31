@@ -122,3 +122,7 @@ newEntryForm.entry.focus();
 log.setAttribute('class', 'hidden');
 
 console.log('Startup functions successfully completed.')
+
+setTimeout(function() {
+	document.getElementById('loading').setAttribute('class', 'hidden');
+}, 3000);
