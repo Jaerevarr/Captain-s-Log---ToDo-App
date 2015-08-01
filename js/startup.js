@@ -124,5 +124,6 @@ log.setAttribute('class', 'hidden');
 console.log('Startup functions successfully completed.')
 
 setTimeout(function() {
-	document.getElementById('loading').setAttribute('class', 'hidden');
+	var removeLoad = document.getElementById('loading')
+	removeLoad.parentNode.removeChild(removeLoad);
 }, 3000);
