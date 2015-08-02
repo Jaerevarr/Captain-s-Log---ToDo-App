@@ -29,9 +29,36 @@
 		</div>
 
 		<script type = 'text/javascript'>
+			var ringSpeeds = [];
+			var ringDirections = [];
+			var exclude = [];
+			for (var i = 0; i < 5; i++) {
+				// random ring speed from 3 to 10
+				function speedGen() {
+					var randSpeed = Math.floor((Math.random() * 8) + 3);
+					function isInArray(value, array) {
+						return array.indexOf(value) > -1;
+					}
+					if (isInArray(randSpeed, exclude)) {
+						speedGen();
+					} else {
+						ringSpeeds.push(randSpeed);
+						exclude.push(randSpeed);
+					}
+
+				}
+				speedGen();
+				// random ring rotation direction; spin or reverseSpin
+				var randDirection = Math.floor((Math.random() * 2) + 1);
+				if (randDirection === 1) {
+					ringDirections.push('spin');
+				} else {
+					ringDirections.push('spinReverse');
+				};
+			};
 			var style = document.createElement('style');
 			style.type = 'text/css';
-			style.innerHTML = '#loading {position: fixed; width: 100%; height: 100%; top: -10px; left: -10px; background-color: #000000;} #loadRing1 {position: fixed; width: 300px; height: 300px; top: 50%; left: 50%; margin-top: -150px; margin-left: -150px; display: block; border: solid; border-width: 20px; border-color: #55bbff; border-left-color: #000000; border-radius: 300px; animation: spin 10s linear infinite;} #loadRing2 {position: fixed; width: 250px; height: 250px; top: 50%; left: 50%; margin-top: -125px; margin-left: -125px; display: block; border: solid; border-width: 20px; border-color: #55bbff; border-left-color: #000000; border-radius: 250px; animation: spinReverse 5s linear infinite;} #loadRing3 {position: fixed; width: 200px; height: 200px; top: 50%; left: 50%; margin-top: -100px; margin-left: -100px; display: block; border: solid; border-width: 20px; border-color: #55bbff; border-left-color: #000000; border-radius: 200px; animation: spin 2s linear infinite;} #loadRing4 {position: fixed; width: 150px; height: 150px; top: 50%; left: 50%; margin-top: -75px; margin-left: -75px; display: block; border: solid; border-width: 20px; border-color: #55bbff; border-left-color: #000000; border-radius: 150px; animation: spin 7s linear infinite;} #loadRing5 {position: fixed; width: 100px; height: 100px; top: 50%; left: 50%; margin-top: -50px; margin-left: -50px; display: block; border: solid; border-width: 20px; border-color: #55bbff; border-left-color: #000000; border-radius: 100px; animation: spinReverse 4s linear infinite;} #loadText {color: #55bbff; background-color: #000000; text-align: center; padding-top: 10px; padding-bottom: 10px; text-shadow: 0 0 10px #3399ff;} @keyframes spin {100% {transform: rotate(-360deg);}} @keyframes spinReverse {100% {transform: rotate(360deg);}}';
+			style.innerHTML = '#loading {position: fixed; width: 100%; height: 100%; top: -10px; left: -10px; background-color: #000000;} #loadRing1 {position: fixed; width: 300px; height: 300px; top: 50%; left: 50%; margin-top: -150px; margin-left: -150px; display: block; border: solid; border-width: 20px; border-color: #55bbff; border-left-color: #000000; border-radius: 300px; animation: ' + ringDirections[0] + ' ' + ringSpeeds[0] + 's linear infinite;} #loadRing2 {position: fixed; width: 250px; height: 250px; top: 50%; left: 50%; margin-top: -125px; margin-left: -125px; display: block; border: solid; border-width: 20px; border-color: #55bbff; border-left-color: #000000; border-radius: 250px; animation: ' + ringDirections[1] + ' ' + ringSpeeds[1] + 's linear infinite;} #loadRing3 {position: fixed; width: 200px; height: 200px; top: 50%; left: 50%; margin-top: -100px; margin-left: -100px; display: block; border: solid; border-width: 20px; border-color: #55bbff; border-left-color: #000000; border-radius: 200px; animation: ' + ringDirections[2] + ' ' + ringSpeeds[2] + 's linear infinite;} #loadRing4 {position: fixed; width: 150px; height: 150px; top: 50%; left: 50%; margin-top: -75px; margin-left: -75px; display: block; border: solid; border-width: 20px; border-color: #55bbff; border-left-color: #000000; border-radius: 150px; animation: ' + ringDirections[3] + ' ' + ringSpeeds[3] + 's linear infinite;} #loadRing5 {position: fixed; width: 100px; height: 100px; top: 50%; left: 50%; margin-top: -50px; margin-left: -50px; display: block; border: solid; border-width: 20px; border-color: #55bbff; border-left-color: #000000; border-radius: 100px; animation: ' + ringDirections[4] + ' ' + ringSpeeds[4] + 's linear infinite;} #loadText {color: #55bbff; background-color: #000000; text-align: center; padding-top: 10px; padding-bottom: 10px; text-shadow: 0 0 10px #3399ff;} @keyframes spin {100% {transform: rotate(-360deg);}} @keyframes spinReverse {100% {transform: rotate(360deg);}}';
 			document.getElementsByTagName('head')[0].appendChild(style);
 		</script> 
 
