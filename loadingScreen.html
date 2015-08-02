@@ -1,32 +1,11 @@
-	
 <html>
 	<head>
-		<title>Captain's Log</title>
-		<link rel = 'stylesheet' type = 'text/css' href = 'css/style.css'>
+		<title>Captain's Log - Loading Screen</title>
+		<!-- <link rel = 'stylesheet' type = 'text/css' href = 'css/style.css'> -->
 	</head>
 	<body>
-		<h1 class = 'title' id = 'mainTitle'><b>Captain's Log</b></h1>
 
-		<form name = 'newEntryForm' id = 'newEntryForm' onSubmit="btn_newEntry.click(); return false;">
-			<input type = 'text' name = 'entry' id = 'entry' />
-		</form>
-		<br>
-		<button type = 'submit' class = 'button' id = 'btn_newEntry'>New Entry</button>
-
-		<br><br>
-
-		<div class = 'divider'></div>
-
-		<br><br>
-		
-		<button class = 'button' id = 'clearCompleted'>Clear Completed</button>
-		<button class = 'button' id = 'btn_clearLog'>Clear Log</button>
-
-		<br><br>
-
-		<div id = 'log'>
-
-		</div>
+	<!-- the loading screen from the Captain's Log, played infinitely, as an example of how to create such a thing -->
 
 		<script type = 'text/javascript'>
 			var ringSpeeds = [];
@@ -72,10 +51,5 @@
 			<div id = 'loadRing5'></div>
 			<h1 id = 'loadText'>Initializing</h1>
 		</div>
-
-		<script type = 'text/javascript' src = 'js/stardate.js'></script>
-
-		<script type = 'text/javascript' src = 'js/startup.js'></script>
-
 	</body>
 </html>
