@@ -12,4 +12,5 @@ The Captain's Log is a lightweight javascript to-do app modeled after a starship
 - dates to monitor when each entry was logged
 - support for cookies, so you can pick up where you left off at any time
 - support for a larger time scale; reminders for the far future and the like
-- customization options for layout and/or color schemes, which could be remembered via the cookie
+- customization options for layout
+- multiple customizable color schemes
