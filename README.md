@@ -1,3 +1,5 @@
+#Captain's Log - ToDo App
+
 The Captain's Log is a lightweight javascript to-do app modeled after a starship captain's personal log.
 
 ###Current features:
